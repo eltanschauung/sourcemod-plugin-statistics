@@ -1,6 +1,6 @@
 # SourceMod Plugin Statistics
 
-This is a statistics system for SourceMod server administrators familiar with programming. Use the API in your SourcePawn plugins to record whatever you want in a database that is easy to query. Statistics at this scale can become expensive on SourceMod's single game thread, so a Rust service performs durable, batched database writes instead. Database rows include a tickrate stamp, this feature was inspired and derived from <a href="https://github.com/sapphonie/StAC-tf2">STeph's AntiCheat</a>
+This is a statistics system for SourceMod server administrators familiar with programming. Use the API in your SourcePawn plugins to record whatever you want in a database that is easy to query, such as isolating by plugin, event name, map or time. Statistics at this scale can become expensive on SourceMod's single game thread, so a Rust service performs durable, batched database writes instead. Database rows include a tickrate stamp, this feature was inspired and derived from <a href="https://github.com/sapphonie/StAC-tf2">STeph's AntiCheat</a>
 
 ## Requirements
 
