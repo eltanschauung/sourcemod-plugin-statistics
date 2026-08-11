@@ -124,8 +124,6 @@ ORDER BY e.occurred_at DESC
 LIMIT 100;
 ```
 
-Legacy `*_statistics_events` tables can be imported with `scripts/migrate_legacy_tables.py`. Existing tables are never dropped by the migration. Legacy rows use zero for tickrate fields because those values were not recorded; every event received through the current API has real tickrate stamps.
-
 ## Failure Behavior
 
 SourceMod retains unsent events in a bounded queue and retries the connection. The daemon journals accepted events before acknowledgement, replays unfinished records after restart, deduplicates event IDs, and records unrecoverable journal entries in a dead-letter file. A database outage therefore delays writes without blocking the game thread.
