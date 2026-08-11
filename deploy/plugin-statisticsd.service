@@ -1,0 +1,21 @@
+[Unit]
+Description=SourceMod plugin statistics database writer
+After=network-online.target mariadb.service mysql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=-%h/.local/state/plugin-statisticsd
+EnvironmentFile=%h/.config/plugin-statisticsd/service.env
+ExecStartPre=/usr/bin/mkdir -p %h/.local/state/plugin-statisticsd
+ExecStart=%h/sourcemod-plugin-statistics/target/release/plugin-statisticsd
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/.local/state/plugin-statisticsd
+
+[Install]
+WantedBy=default.target

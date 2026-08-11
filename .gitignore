@@ -1,0 +1,10 @@
+target/
+build/
+.env
+.env.*
+*.log
+*.sqlite
+*.db
+.idea/
+.vscode/
+__pycache__/

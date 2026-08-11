@@ -1,0 +1,19 @@
+[package]
+name = "sourcemod-plugin-statistics"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.85"
+license = "GPL-3.0-or-later"
+description = "Durable Rust database writer for SourceMod plugin statistics"
+repository = "https://github.com/eltanschauung/sourcemod-plugin-statistics"
+readme = "README.md"
+autobins = false
+
+[[bin]]
+name = "plugin-statisticsd"
+path = "src/main.rs"
+
+[dependencies]
+mysql = "26"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
