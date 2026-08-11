@@ -2,8 +2,6 @@
 
 This is a statistics system for SourceMod server administrators familiar with programming. Use the API in your SourcePawn plugins to record whatever you want in a database that is easy to query. Statistics at this scale can become expensive on SourceMod's single game thread, so a Rust service performs durable, batched database writes instead.
 
-The checked-in SourceMod plugin and Rust service are the complete production implementation. Site-specific deployments should differ through configuration, not source forks.
-
 ## Requirements
 
 - SourceMod 1.11 or newer
