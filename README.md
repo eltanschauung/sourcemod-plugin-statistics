@@ -4,18 +4,6 @@ This is a statistics system for SourceMod server administrators familiar with pr
 
 The checked-in SourceMod plugin and Rust service are the complete production implementation. Site-specific deployments should differ through configuration, not source forks.
 
-## Design
-
-- Consumer plugins make one nonblocking native call.
-- One provider plugin owns one queue and TCP connection per game server.
-- The Rust service journals accepted events before acknowledging them.
-- MySQL writes are batched, transactional, idempotent by event ID, and retried after failures.
-- Map sessions use `epoch_RANDOMHEX` keys and record explicit or inferred endings.
-- Every statistics event is stamped by the provider with the server tick, tick interval, expected tickrate, and observed tickrate.
-- Periodic tick samples provide session average and minimum observed tickrates.
-
-The listener defaults to `127.0.0.1`. Do not expose it publicly without a firewall, TLS-capable proxy, and `PLUGIN_STATS_AUTH_TOKEN`.
-
 ## Requirements
 
 - SourceMod 1.11 or newer
